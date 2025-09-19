@@ -34,7 +34,7 @@ interface TelegramWebAppHapticFeedback {
 
 interface TelegramWebApp {
   initData: string;
-  initDataUnsafe: any;
+  initDataUnsafe: unknown;
   colorScheme: "light" | "dark";
   themeParams: TelegramWebAppThemeParams;
   isExpanded: boolean;
