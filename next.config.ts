@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  turbopack: {
+    // Make sure Turbopack treats this folder as the root
+    root: __dirname,
+  },
 };
 
 export default nextConfig;

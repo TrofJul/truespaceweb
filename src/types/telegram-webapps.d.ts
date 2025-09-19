@@ -49,8 +49,7 @@ interface TelegramWebApp {
   close(): void;
 }
 
-interface TelegramWindow extends Window {
+// Augment the global Window type so `window.Telegram` is recognized
+interface Window {
   Telegram?: { WebApp?: TelegramWebApp };
 }
-
-declare const window: TelegramWindow;

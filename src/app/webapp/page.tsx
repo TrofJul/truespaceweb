@@ -4,7 +4,10 @@ import { useEffect, useMemo, useState } from "react";
 
 export default function TelegramWebAppPage() {
   const [ready, setReady] = useState(false);
-  const tg = useMemo(() => (typeof window !== "undefined" ? window.Telegram?.WebApp : undefined), []);
+  const tg = useMemo<TelegramWebApp | undefined>(
+    () => (typeof window !== "undefined" ? window.Telegram?.WebApp : undefined),
+    []
+  );
 
   useEffect(() => {
     if (!tg) return;
@@ -54,7 +57,7 @@ export default function TelegramWebAppPage() {
       <div className="w-full max-w-md rounded-2xl border border-white/10 bg-black/20 p-6 text-white shadow-2xl backdrop-blur">
         <h1 className="text-2xl font-semibold tracking-tight">Учебное пространство</h1>
         <p className="mt-2 text-white/80 text-sm">
-          Страница адаптирована для Telegram WebApp. Кнопка "Готово" внизу — это MainButton Telegram.
+          Страница адаптирована для Telegram WebApp. Кнопка &quot;Готово&quot; внизу — это MainButton Telegram.
         </p>
         <div className="mt-6 flex gap-3">
           <button
